@@ -39,68 +39,164 @@
     <!-- Spinner End -->
 
 
+<!-- Top Bar + Navbar Styles -->
+<style>
+    /* Top Bar Styles */
+    .top-bar-custom {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 10px 30px; /* Top/Bottom: 10px | Left/Right: 30px */
+    font-size: 14px;
+    width: 100%;
+}
+
+
+    .top-bar-custom i {
+        color: #28a745;
+    }
+
+    .top-bar-custom a {
+        transition: color 0.3s;
+    }
+
+    .top-bar-custom a:hover {
+        color: #ff6600;
+    }
+
+    /* Navbar Styles */
+    .navbar-custom {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        margin: 10px 20px;
+        padding: 5px 30px;
+        position: sticky;
+        top: 60px; /* space for the top bar */
+        z-index: 998;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navbar-custom .nav-link {
+        color: #333;
+        font-weight: 600;
+        margin: 0 12px;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-custom .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        background-color: #ff6600;
+        transition: 0.4s;
+        transform: translateX(-50%);
+    }
+
+    .navbar-custom .nav-link:hover::after {
+        width: 100%;
+    }
+
+    .navbar-custom .nav-link:hover {
+        color: #ff6600;
+    }
+
+    .navbar-logo {
+        height: 70px;
+    }
+
+    @media (max-width: 991.98px) {
+        .navbar-custom {
+            border-radius: 10px;
+            top: 0;
+            padding: 20px;
+        }
+
+        .navbar-collapse {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 10px 20px;
+        }
+
+        .navbar-nav {
+            margin-top: 10px;
+        }
+
+        .nav-item {
+            margin: 10px 0;
+        }
+
+        .top-bar-custom {
+            display: none !important;
+        }
+    }
+</style>
+
 <!-- Top Bar Start -->
 <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
-    <div class="top-bar row gx-0 align-items-center d-none d-lg-flex bg-white shadow-sm py-2 px-4">
+    <div class="top-bar row gx-0 align-items-center d-none d-lg-flex bg-white shadow-sm py-2" style="padding-left: 30px; padding-right: 30px;">
         <div class="col-lg-6 text-start">
             <small class="me-4 fw-semibold text-muted">
-                <i class="fa fa-map-marker-alt me-2 text-success"></i>Muzaffargarh, Pakistan
+                <i class="fa fa-map-marker-alt me-2 text-success"></i>Plot # 283, Street No. 13, Main Alipur Road, Muzaffargarh, Punjab, Pakistan 34200
             </small>
             <small class="fw-semibold text-muted">
-                <i class="fa fa-envelope me-2 text-success"></i>info@sultanfoods.com
+                <i class="fa fa-envelope me-2 text-success"></i>sultanfoodsbigsip@gmail.com
             </small>
         </div>
         <div class="col-lg-6 text-end">
             <small class="fw-semibold text-muted">Follow us:</small>
-            <a class="text-success ms-3 fs-5" href="#"><i class="fab fa-facebook-f"></i></a>
-            <a class="text-success ms-3 fs-5" href="#"><i class="fab fa-twitter"></i></a>
-            <a class="text-success ms-3 fs-5" href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a class="text-success ms-3 fs-5" href="#"><i class="fab fa-instagram"></i></a>
+            <a class="text-success ms-3 fs-5" target="_blank" href="https://www.instagram.com/sultan_the_food_experts?igsh=MWdoNTJyaWU3OXhiOA=="><i class="fab fa-instagram"></i></a>
+            <a class="text-success ms-3 fs-5" target="_blank"  href="https://www.facebook.com/share/18wJ2gR9rJ/"><i class="fab fa-facebook-f"></i></a>
+            <a class="text-success ms-3 fs-5" href="https://wa.me/?text=Check%20out%20this%20link%20to%20Sultan%20Foods!" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
         </div>
     </div>
 </div>
 <!-- Top Bar End -->
 
+
 <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn bg-white mt-5" data-wow-delay="0.1s">
-    <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
-        <h1 class="fw-bold m-0" style="color: #ff6600;">
-            سلطان<span class="text-success" style="margin-right: 5px;">فوڈز</span>
-        </h1>
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom wow fadeIn" data-wow-delay="0.1s">
+    <a href="index.html" class="navbar-brand">
+        <img src="img/logo.svg" alt="Sultan Foods" class="navbar-logo">
     </a>
-    
-    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="index.html" class="nav-item nav-link fw-semibold text-dark">Home</a>
-            <a href="about.html" class="nav-item nav-link fw-semibold text-dark">About</a>
-            <a href="product.html" class="nav-item nav-link fw-semibold text-dark">Products</a>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle fw-semibold text-dark" data-bs-toggle="dropdown">More</a>
-                <div class="dropdown-menu m-0 rounded-3 shadow-sm">
-                    <a href="feature.html" class="dropdown-item">Features</a>
-                    <a href="blog.html" class="dropdown-item">Blog</a>
-                    <a href="testimonial.html" class="dropdown-item">Reviews</a>
-                </div>
-            </div>
-            <a href="contact.html" class="nav-item nav-link fw-semibold text-dark">Contact</a>
-        </div>
 
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto">
+            <a href="index.html" class="nav-item nav-link">Home</a>
+            <a href="about.html" class="nav-item nav-link">About</a>
+            <a href="product.html" class="nav-item nav-link">Products</a>
+            <a href="contact.html" class="nav-item nav-link">Contact</a>
+        </div>
     </div>
 </nav>
 <!-- Navbar End -->
 
-<!-- Additional Style to Avoid Overlap -->
-<style>
-    /* Ensure there’s space for the fixed navbar */
-    body {
-        padding-top: 10px; /* Adjust based on your navbar height */
-    }
-</style>
 
-<!-- Top Bar End -->
+
+
+
+    <!-- Additional Style to Avoid Overlap -->
+    <style>
+        /* Ensure there’s space for the fixed navbar */
+        body {
+            padding-top: 10px;
+            /* Adjust based on your navbar height */
+        }
+    </style>
+
+    <!-- Top Bar End -->
 
 
 <!-- About Start -->
@@ -109,82 +205,161 @@
         <div class="row g-5 align-items-center">
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                 <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                    <img class="img-fluid w-100" src="img/about.png" alt="About Our Juices">
+                    <img class="img-fluid w-100" src="img/photo.jpg" alt="About Sultan Foods">
                 </div>
             </div>
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                <h1 class="display-5 mb-4">Pure, Organic, and Refreshing Juices</h1>
-                <p class="mb-4">Experience the freshness in every sip. Our juices are made from 100% organic ingredients, cold-pressed to preserve nutrients, and crafted to energize your day naturally.</p>
-                <p><i class="fa fa-check text-primary me-3"></i>Cold-pressed to retain nutrients</p>
-                <p><i class="fa fa-check text-primary me-3"></i>No preservatives or added sugars</p>
-                <p><i class="fa fa-check text-primary me-3"></i>Made from certified organic produce</p>
-                <p><i class="fa fa-check text-primary me-3"></i>Packed with vitamins and antioxidants</p>
-                <p><i class="fa fa-check text-primary me-3"></i>Environmentally friendly packaging</p>
-                <p><i class="fa fa-check text-primary me-3"></i>Locally sourced ingredients for freshness</p>
-                <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">Read More</a>
+                <h1 class="display-5 mb-4">Welcome to Sultan Foods</h1>
+                <p class="mb-4">Founded by Mr. Iftikhar Kaleem in 1995, our journey began with a passion for delivering high-quality food products that exceed customer expectations. With a commitment to excellence, we've established ourselves as a trusted name in the market.</p>
+                <p class="mb-4">Our mission is to provide premium products that nourish and delight, while maintaining the highest standards of quality and integrity. At Sultan Foods, we're dedicated to serving you the best.</p>
+                <!-- <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">Read More</a> -->
             </div>
         </div>
     </div>
 </div>
 <!-- About End -->
 
-
-
-
-
-<!-- Footer Start -->
-<div class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h1 class="fw-bold text-primary mb-4">Sultan<span class="text-secondary">Foods</span>&#174;</h1>
-                <p>Pure, organic juices crafted with love. Our mission is to deliver fresh, healthy beverages for a vibrant lifestyle.</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-square btn-outline-light rounded-circle me-0" href=""><i class="fab fa-linkedin-in"></i></a>
+<!-- Juices Details Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                    <img class="img-fluid w-100" src="img/4.svg" alt="Healthy Juices">
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-light mb-4">Address</h4>
-                <p><i class="fa fa-map-marker-alt me-3"></i>Muzaffargarh, Punjab, Pakistan</p>
-                <p><i class="fa fa-phone-alt me-3"></i>+92 03028709980</p>
-                <p><i class="fa fa-envelope me-3"></i>info@sultanfoods.com</p>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-light mb-4">Quick Links</h4>
-                <a class="btn btn-link" href="">About Us</a>
-                <a class="btn btn-link" href="">Contact Us</a>
-                <a class="btn btn-link" href="">Our Juices</a>
-                <a class="btn btn-link" href="">Terms & Conditions</a>
-                <a class="btn btn-link" href="">Support</a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-light mb-4">Newsletter</h4>
-                <p>Stay updated with our latest juice offers and promotions. Sign up now!</p>
-                <div class="position-relative mx-auto" style="max-width: 400px;">
-                    <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a href="#">Sultan Foods&#174;</a>, All Right Reserved.
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    Designed By <a href="https://htmlcodex.com">Fahad Ahmad Sultan</a>
-                </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <h1 class="display-5 mb-4">Our Fresh, Healthy Juices</h1>
+                <p class="mb-4">Experience the purity and richness of our cold-pressed juices, made with the finest healthy ingredients. Here are some of the key benefits of our juices:</p>
+                <p><i class="fa fa-check text-primary me-3"></i>Cold-pressed to retain all essential nutrients</p>
+                <p><i class="fa fa-check text-primary me-3"></i>No preservatives or added sugars</p>
+                <p><i class="fa fa-check text-primary me-3"></i>Made with 100% healthy fruits and vegetables</p>
+                <p><i class="fa fa-check text-primary me-3"></i>Packed with essential vitamins and antioxidants</p>
+                <p><i class="fa fa-check text-primary me-3"></i>Supports hydration and boosts energy levels</p>
+                <p><i class="fa fa-check text-primary me-3"></i>Environmentally friendly packaging</p>
+                <!-- <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">Explore Our Juices</a> -->
             </div>
         </div>
     </div>
 </div>
-<!-- Footer End -->
+<!-- Juices Details End -->
 
+
+
+
+<!-- Video Section Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <div class="video-wrapper rounded overflow-hidden shadow-lg wow fadeIn" data-wow-delay="0.3s">
+                    <video id="juiceVideo" autoplay muted loop playsinline controls>
+                        <source src="img/vid_juicy.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <p class="text-muted mt-3 wow fadeIn" data-wow-delay="0.5s">Our juices are crafted with care using the highest quality organic fruits.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Video Section End -->
+
+<!-- Inline CSS for Video Styling -->
+<style>
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    }
+
+    .video-wrapper video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+</style>
+
+      <!-- Footer Start -->
+      <div class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h1 class="fw-bold text-primary mb-4">Sultan<span class="text-secondary">Foods</span>&#174;</h1>
+                    <p>Pure, healthy juices crafted with love. Our mission is to deliver fresh, healthy beverages
+                        for a vibrant lifestyle.</p>
+
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-light rounded-circle me-5"
+                            href="https://www.instagram.com/sultan_the_food_experts?igsh=MWdoNTJyaWU3OXhiOA=="><i
+                                class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-5"
+                            href="https://www.facebook.com/share/18wJ2gR9rJ/"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-5"
+                            href="https://wa.me/?text=Check%20out%20this%20link%20to%20Sultan%20Foods!" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+
+
+
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>Plot # 283, Street No. 13, Main Alipur Road, Muzaffargarh, Punjab, Pakistan 34200</p>
+                    <p>
+                        <i class="fa fa-phone-alt me-3"></i>
+                        <a href="tel:+923028709980" class="text-light">+92 302 8709980</a>
+                    </p>
+                    <p>
+                        <i class="fa fa-envelope me-3"></i>
+                        <a href="mailto:sultanfoodsbigsip@gmail.com" class="text-light">sultanfoodsbigsip@gmail.com</a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="product.html">Products</a>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h4 class="text-light mb-3">Have a Question?</h4>
+                    <p class="text-muted">
+                        Got a query or want to know more about our juices? Send us a message — we’d love to hear from
+                        you!
+                    </p>
+                    <div class="position-relative mx-auto" style="max-width: 100%;">
+                        <textarea id="newsletterEmail"
+                            class="form-control bg-transparent text-light border-light w-100 py-3 ps-4 pe-5 mb-2"
+                            placeholder="Your email">
+                            </textarea>
+                        <a id="emailLink" href="#" class="btn btn-primary position-absolute top-0 end-0 mt-2 me-2">
+                            Email me
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="#">Sultan Foods&#174;</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        Designed By <a href="https://htmlcodex.com">Fahad Ahmad Sultan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
 
 
     <!-- Back to Top -->
@@ -198,7 +373,29 @@
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.getElementById('juiceVideo');
+            if (video) {
+                video.muted = true; // Mute just in case
+                video.play().catch(error => {
+                    console.log("Autoplay failed:", error);
+                });
+            }
+        });
+    </script>
 
+<script>
+    document.getElementById('emailLink').addEventListener('click', function (e) {
+        const email = document.getElementById('newsletterEmail').value;
+        if (email) {
+            this.href = `mailto:sultanfoodsbigsip@gmail.com?subject=Newsletter Signup&body=Please add ${email} to the newsletter.`;
+        } else {
+            alert("Please enter your email address first.");
+            e.preventDefault();
+        }
+    });
+</script>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>

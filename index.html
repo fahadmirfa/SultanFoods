@@ -14,7 +14,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Lora:wght@600;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Lora:wght@600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -33,472 +34,550 @@
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" role="status"></div>
     </div>
     <!-- Spinner End -->
 
-<!-- Top Bar Start -->
-<div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
-    <div class="top-bar row gx-0 align-items-center d-none d-lg-flex bg-white shadow-sm py-2 px-4">
-        <div class="col-lg-6 text-start">
-            <small class="me-4 fw-semibold text-muted">
-                <i class="fa fa-map-marker-alt me-2 text-success"></i>Muzaffargarh, Pakistan
-            </small>
-            <small class="fw-semibold text-muted">
-                <i class="fa fa-envelope me-2 text-success"></i>info@sultanfoods.com
-            </small>
-        </div>
-        <div class="col-lg-6 text-end">
-            <small class="fw-semibold text-muted">Follow us:</small>
-            <a class="text-success ms-3 fs-5" href="#"><i class="fab fa-facebook-f"></i></a>
-            <a class="text-success ms-3 fs-5" href="#"><i class="fab fa-twitter"></i></a>
-            <a class="text-success ms-3 fs-5" href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a class="text-success ms-3 fs-5" href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-    </div>
-</div>
-<!-- Top Bar End -->
-
-<!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn bg-white mt-5" data-wow-delay="0.1s">
-    <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
-        <h1 class="fw-bold m-0" style="color: #ff6600;">
-            سلطان<span class="text-success" style="margin-right: 5px;">فوڈز</span>
-        </h1>
-    </a>
-    
-    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="index.html" class="nav-item nav-link fw-semibold text-dark">Home</a>
-            <a href="about.html" class="nav-item nav-link fw-semibold text-dark">About</a>
-            <a href="product.html" class="nav-item nav-link fw-semibold text-dark">Products</a>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle fw-semibold text-dark" data-bs-toggle="dropdown">More</a>
-                <div class="dropdown-menu m-0 rounded-3 shadow-sm">
-                    <a href="feature.html" class="dropdown-item">Features</a>
-                    <a href="blog.html" class="dropdown-item">Blog</a>
-                    <a href="testimonial.html" class="dropdown-item">Reviews</a>
-                </div>
-            </div>
-            <a href="contact.html" class="nav-item nav-link fw-semibold text-dark">Contact</a>
-        </div>
-
-    </div>
-</nav>
-<!-- Navbar End -->
-
-<!-- Additional Style to Avoid Overlap -->
-<style>
-    /* Ensure there’s space for the fixed navbar */
-    body {
-        padding-top: 10px; /* Adjust based on your navbar height */
-    }
-</style>
-
-<!-- Top Bar End -->
-
-
-
-
-
-<!-- Carousel Start -->
-<style>
-    .carousel-img-short {
-        height: 950px;
-        object-fit: cover;
-    }
-
-    .carousel-caption h2 {
-        font-size: 1.3rem;
-        color: white;
-        text-align: left;
-        padding-left: 1px; /* 👈 Add space from the left */
-
-    }
-
-    .btn-outline-light-custom {
-        color: white;
-        border: 2px solid white;
-    }
-
-    .btn-outline-light-custom:hover {
-        background-color: white;
-        color: black;
-    }
-
-    .carousel-caption .full-width-caption {
-        width: 100%;
-        text-align: left;
-        padding-left: 90px; /* 👈 Add space from the left */
-
-    }
-
-    @media (max-width: 768px) {
-        .carousel-caption h2 {
-            font-size: 1.2rem;
+    <!-- Top Bar + Navbar Styles -->
+    <style>
+        /* Top Bar Styles */
+        .top-bar-custom {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            padding: 10px 30px;
+            /* Top/Bottom: 10px | Left/Right: 30px */
+            font-size: 14px;
+            width: 100%;
         }
-    }
-</style>
 
-<div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
-    <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="w-100 carousel-img-short" src="img/9681.jpg" alt="Fresh Juice Banner">
-                <div class="carousel-caption">
-                    <div class="container">
-                        <div class="row">
-                            <div class="full-width-caption">
-                                <h2 class="h2 mb-4 fw-semibold animated slideInDown" style="text-shadow: none;">
-                                    Premium Cold-Pressed Juices, Crafted for Wellness
-                                </h2>
-                                <a href="" class="btn btn-outline-light-custom rounded-pill py-sm-3 px-sm-5">Order Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+        .top-bar-custom i {
+            color: #28a745;
+        }
+
+        .top-bar-custom a {
+            transition: color 0.3s;
+        }
+
+        .top-bar-custom a:hover {
+            color: #ff6600;
+        }
+
+        /* Navbar Styles */
+        .navbar-custom {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            margin: 10px 20px;
+            padding: 5px 30px;
+            position: sticky;
+            top: 60px;
+            /* space for the top bar */
+            z-index: 998;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar-custom .nav-link {
+            color: #333;
+            font-weight: 600;
+            margin: 0 12px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-custom .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: #ff6600;
+            transition: 0.4s;
+            transform: translateX(-50%);
+        }
+
+        .navbar-custom .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #ff6600;
+        }
+
+        .navbar-logo {
+            height: 70px;
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar-custom {
+                border-radius: 10px;
+                top: 0;
+                padding: 20px;
+            }
+
+            .navbar-collapse {
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: 15px;
+                padding: 10px 20px;
+            }
+
+            .navbar-nav {
+                margin-top: 10px;
+            }
+
+            .nav-item {
+                margin: 10px 0;
+            }
+
+            .top-bar-custom {
+                display: none !important;
+            }
+        }
+    </style>
+
+    <!-- Top Bar Start -->
+    <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="top-bar row gx-0 align-items-center d-none d-lg-flex bg-white shadow-sm py-2"
+            style="padding-left: 30px; padding-right: 30px;">
+            <div class="col-lg-6 text-start">
+                <small class="me-4 fw-semibold text-muted">
+                    <i class="fa fa-map-marker-alt me-2 text-success"></i>Plot # 283, Street No. 13, Main Alipur Road, Muzaffargarh, Punjab, Pakistan 34200
+                </small>
+                <small class="fw-semibold text-muted">
+                    <i class="fa fa-envelope me-2 text-success"></i>sultanfoodsbigsip@gmail.com
+                </small>
             </div>
-
-            <div class="carousel-item">
-                <img class="w-100 carousel-img-short" src="img/28039.jpg" alt="Juice Lifestyle">
-                <div class="carousel-caption">
-                    <div class="container">
-                        <div class="row">
-                            <div class="full-width-caption">
-                                <h2 class="h2 mb-4 fw-semibold animated slideInDown" style="text-shadow: none;">
-                                    Nutrient-Rich Juices for a Balanced Lifestyle
-                                </h2>
-                                <a href="" class="btn btn-outline-light-custom rounded-pill py-sm-3 px-sm-5">Order Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-</div>
-<!-- Carousel End -->
-
-
-
-
-<!-- About Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="row g-5 align-items-center">
-            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                    <img class="img-fluid w-100" src="img/about.png" alt="About Our Juices">
-                </div>
-            </div>
-            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                <h1 class="display-5 mb-4">Pure, Organic, and Refreshing Juices</h1>
-                <p class="mb-4">Experience the freshness in every sip. Our juices are made from 100% organic ingredients, cold-pressed to preserve nutrients, and crafted to energize your day naturally.</p>
-                <p><i class="fa fa-check text-primary me-3"></i>Cold-pressed to retain nutrients</p>
-                <p><i class="fa fa-check text-primary me-3"></i>No preservatives or added sugars</p>
-                <p><i class="fa fa-check text-primary me-3"></i>Made from certified organic produce</p>
-                <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">Read More</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- About End -->
-
-
-
- <!-- Feature Start -->
-<div class="container-fluid bg-light bg-icon my-5 py-6">
-    <div class="container">
-        <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-            <h1 class="display-5 mb-3">Our Juice Features</h1>
-            <p>Discover the benefits of our freshly prepared juices, made with care to deliver pure flavor and natural goodness.</p>
-        </div>
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="bg-white text-center h-100 p-4 p-xl-5">
-                    <img class="img-fluid mb-4" src="img/icon-1.png" alt="">
-                    <h4 class="mb-3">Cold-Pressed Process</h4>
-                    <p class="mb-4">Our juices are cold-pressed to retain maximum nutrients and freshness, ensuring every sip is packed with health benefits.</p>
-                    <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read More</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="bg-white text-center h-100 p-4 p-xl-5">
-                    <img class="img-fluid mb-4" src="img/icon-2.png" alt="">
-                    <h4 class="mb-3">100% Organic Juices</h4>
-                    <p class="mb-4">We use only organic fruits for juicing — no additives, no preservatives, just pure juice as nature intended.</p>
-                    <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read More</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="bg-white text-center h-100 p-4 p-xl-5">
-                    <img class="img-fluid mb-4" src="img/icon-3.png" alt="">
-                    <h4 class="mb-3">Safe & Hygienic</h4>
-                    <p class="mb-4">Every bottle is prepared under strict hygiene standards, ensuring it's biologically safe and perfectly refreshing.</p>
-                    <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Feature End -->
-
-
-
-<!-- Juice Product Section -->
-<div class="container-xxl py-5">
-    <div class="container">
-      <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s">
-        <h1 class="display-6 mb-3 fw-bold">Explore Our Juice Collection</h1>
-        <p class="text-muted">Indulge in a wide range of freshly squeezed, organic juices made with handpicked ingredients to boost your health and refresh your day.</p>
-      </div>
-  
-      <!-- Juice Categories -->
-      <ul class="nav nav-pills mb-4 justify-content-center" id="juiceTabs">
-        <li class="nav-item"><a class="nav-link active rounded-pill px-4 py-2 me-2" data-category="citrus">Citrus</a></li>
-        <li class="nav-item"><a class="nav-link rounded-pill px-4 py-2 me-2" data-category="berries">Berries</a></li>
-        <li class="nav-item"><a class="nav-link rounded-pill px-4 py-2 me-2" data-category="tropical">Tropical</a></li>`
-        <li class="nav-item"><a class="nav-link rounded-pill px-4 py-2" data-category="green">Green</a></li>
-      </ul>
-  
-      <!-- Product Grid -->
-      <div class="row g-4" id="productContainer">
-        <!-- Products will be dynamically rendered here -->
-      </div>
-    </div>
-  </div>
-  
-<!-- Visit Juice Bar Start -->
-<div class="container-fluid bg-success bg-icon mt-5 py-6">
-    <div class="container">
-        <div class="row g-5 align-items-center">
-            <div class="col-md-7 wow fadeIn" data-wow-delay="0.1s">
-                <h1 class="display-5 text-white mb-3">Come Sip With Us!</h1>
-                <p class="text-white mb-0">
-                    Experience the freshness of nature right at our juice bar. From cold-pressed juices to energizing fruit blends,
-                    our space is all about health, taste, and community. Drop by and enjoy a glass of wellness!
-                </p>
-            </div>
-            <div class="col-md-5 text-md-end wow fadeIn" data-wow-delay="0.5s">
-                <a class="btn btn-lg btn-light rounded-pill py-3 px-5 text-success fw-bold"
-                   href="https://luvfruits.com/?utm_source=chatgpt.com"
-                   target="_blank" rel="noopener noreferrer">
-                    Visit Now
+            <div class="col-lg-6 text-end">
+                <small class="fw-semibold text-muted">Follow us:</small>
+                <a class="text-success ms-3 fs-5" target="_blank"
+                    href="https://www.instagram.com/sultan_the_food_experts?igsh=MWdoNTJyaWU3OXhiOA=="><i
+                        class="fab fa-instagram"></i></a>
+                <a class="text-success ms-3 fs-5" target="_blank" href="https://www.facebook.com/share/18wJ2gR9rJ/"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a class="text-success ms-3 fs-5"
+                    href="https://wa.me/?text=Check%20out%20this%20link%20to%20Sultan%20Foods!" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
                 </a>
             </div>
         </div>
     </div>
-</div>
-<!-- Visit Juice Bar End -->
+    <!-- Top Bar End -->
 
 
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom wow fadeIn" data-wow-delay="0.1s">
+        <a href="index.html" class="navbar-brand">
+            <img src="img/logo.svg" alt="Sultan Foods" class="navbar-logo">
+        </a>
 
-<!-- Testimonial Start -->
-<div class="container-fluid bg-light bg-icon py-6 mb-5">
-    <div class="container">
-        <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-            <h1 class="display-5 mb-3">What Our Juice Lovers Say</h1>
-            <p>Freshness in every sip! Here's what our happy customers have to say about our juices.</p>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="product.html" class="nav-item nav-link">Products</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
         </div>
-        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+    </nav>
+    <!-- Navbar End -->
 
-            <!-- Testimonial 1 -->
-            <div class="testimonial-item position-relative bg-white p-5 mt-4 rounded-4 shadow-sm">
-                <i class="fa fa-quote-left fa-3x text-success position-absolute top-0 start-0 mt-n4 ms-5"></i>
-                <p class="mb-4">"The Green Detox is a game-changer! I feel energized and refreshed every morning. Absolutely love the taste."</p>
-                <div class="d-flex align-items-center">
-                    <img class="flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" alt="Customer 1" style="width: 60px; height: 60px;">
-                    <div class="ms-3">
-                        <h5 class="mb-1">Sarah Malik</h5>
-                        <span>Fitness Coach</span>
+
+
+
+
+    <!-- Additional Style to Avoid Overlap -->
+    <style>
+        /* Ensure there’s space for the fixed navbar */
+        body {
+            padding-top: 10px;
+            /* Adjust based on your navbar height */
+        }
+    </style>
+
+    <!-- Top Bar End -->
+
+
+
+    <!-- Carousel Start -->
+    <style>
+        /* Outer Container for Carousel */
+        .carousel-container {
+            max-width: 1500px;
+            /* Increased static width for the container */
+            margin: 0 auto;
+            /* Center the container horizontally */
+            padding-top: 50px;
+            /* Add top padding to the container */
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        /* Carousel Image with Proper Fit */
+        .carousel-img-short {
+            width: 100%;
+            /* Ensure the image takes full width of the container */
+            height: 800px;
+            /* Set the height of the container */
+            object-fit: cover;
+            /* Ensure the image covers the container area without distortion */
+        }
+
+        /* General Caption Styling */
+        .carousel-caption h2 {
+            font-size: 2rem;
+            color: white;
+            text-align: left;
+            padding-left: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        /* Base Button Style */
+        .btn-outline-light-custom {
+            color: white;
+            border: 2px solid white;
+            height: 60px;
+            width: 180px;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Button Style for First Slide */
+        .carousel-item:nth-child(1) .btn-outline-light-custom {
+            background-color: #008000;
+        }
+
+        .carousel-item:nth-child(1) .btn-outline-light-custom:hover {
+            background-color: #009e00;
+            color: white;
+        }
+
+        /* Button Style for Second Slide */
+        .carousel-item:nth-child(2) .btn-outline-light-custom {
+            background-color: #ff4500;
+        }
+
+        .carousel-item:nth-child(2) .btn-outline-light-custom:hover {
+            background-color: #ff8c00;
+            color: white;
+        }
+
+        /* Align Caption Content to Left */
+        .carousel-caption .full-width-caption {
+            position: absolute;
+            bottom: 20%;
+            left: 2rem;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* Left-align button */
+            padding-left: 1rem;
+        }
+
+        .carousel-caption .full-width-caption a {
+            text-decoration: none;
+        }
+
+        /* Bottom Contact Styling */
+        .carousel-contact {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 0;
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Contact Icon Styling */
+        .carousel-contact i {
+            color: white;
+            font-size: 20px;
+        }
+
+        .carousel-contact-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            color: white;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 14px;
+            z-index: 10;
+        }
+
+        .carousel-contact-overlay i {
+            margin: 0 5px;
+            color: white;
+        }
+
+        .carousel-contact-overlay a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-caption h2 {
+                font-size: 1.5rem;
+            }
+
+            .carousel-caption .full-width-caption {
+                padding-top: 20rem;
+                padding-left: 1rem;
+            }
+
+            .carousel-contact {
+                font-size: 12px;
+            }
+
+            .carousel-contact-overlay {
+                font-size: 12px;
+                padding: 6px 0;
+            }
+
+            .carousel-item .carousel-caption {
+                padding-left: 10px;
+            }
+        }
+    </style>
+
+    <!-- Carousel Container -->
+    <div class="carousel-container">
+        <div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
+            <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="w-100 carousel-img-short" src="img/1.svg" alt="Fresh Juice Banner">
+                        <div class="carousel-caption">
+                            <div class="full-width-caption">
+                                <!-- <a href="http://google.com" target="_blank" class="btn btn-outline-light-custom rounded-pill py-sm-3 px-sm-5">Explore Now</a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img class="w-100 carousel-img-short" src="img/2.svg" alt="Juice Lifestyle">
+                        <div class="carousel-caption">
+                            <div class="full-width-caption">
+                                <!-- <a href="http://google.com" target="_blank" class="btn btn-outline-light-custom rounded-pill py-sm-3 px-sm-5">Join Us</a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-contact-overlay">
+                        <i class="fa fa-phone"></i>
+                        <a href="tel:+923028709980" style="color: white; text-decoration: none;">+923028709980</a>
+                        <span>|</span>
+                        <i class="fa fa-envelope"></i>
+                        <a href="mailto:sultanfoodsbigsip@gmail.com"
+                            style="color: white; text-decoration: none;">sultanfoodsbigsip@gmail.com</a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Testimonial 2 -->
-            <div class="testimonial-item position-relative bg-white p-5 mt-4 rounded-4 shadow-sm">
-                <i class="fa fa-quote-left fa-3x text-success position-absolute top-0 start-0 mt-n4 ms-5"></i>
-                <p class="mb-4">"I can't go a day without the Mango Punch! It’s like sunshine in a bottle. Super fresh and natural."</p>
-                <div class="d-flex align-items-center">
-                    <img class="flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg" alt="Customer 2" style="width: 60px; height: 60px;">
-                    <div class="ms-3">
-                        <h5 class="mb-1">Ahmed Raza</h5>
-                        <span>Entrepreneur</span>
-                    </div>
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-
-            <!-- Testimonial 3 -->
-            <div class="testimonial-item position-relative bg-white p-5 mt-4 rounded-4 shadow-sm">
-                <i class="fa fa-quote-left fa-3x text-success position-absolute top-0 start-0 mt-n4 ms-5"></i>
-                <p class="mb-4">"Tried the Berry Mix and I’m hooked! You can literally taste the freshness and quality. Highly recommend."</p>
-                <div class="d-flex align-items-center">
-                    <img class="flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" alt="Customer 3" style="width: 60px; height: 60px;">
-                    <div class="ms-3">
-                        <h5 class="mb-1">Mehwish Khan</h5>
-                        <span>Nutritionist</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Testimonial 4 -->
-            <div class="testimonial-item position-relative bg-white p-5 mt-4 rounded-4 shadow-sm">
-                <i class="fa fa-quote-left fa-3x text-success position-absolute top-0 start-0 mt-n4 ms-5"></i>
-                <p class="mb-4">"Every juice is a burst of natural flavor. From citrus to tropical blends — they never disappoint!"</p>
-                <div class="d-flex align-items-center">
-                    <img class="flex-shrink-0 rounded-circle" src="img/testimonial-4.jpg" alt="Customer 4" style="width: 60px; height: 60px;">
-                    <div class="ms-3">
-                        <h5 class="mb-1">Bilal Sheikh</h5>
-                        <span>Health Blogger</span>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
-</div>
-<!-- Testimonial End -->
-
-
-
-<!-- Blog Start -->
-<div class="container-xxl py-5 bg-light">
-    <div class="container">
-        <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <h1 class="display-5 mb-3 text-primary">Juice Bar Insights</h1>
-            <p class="text-muted">Explore our freshest takes on juice recipes, wellness tips, and the benefits of healthy living — straight from our bar to your screen.</p>
-        </div>
-        <div class="row g-4">
-            <!-- Blog Post 1 -->
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="card h-100 border-0 shadow-sm">
-                    <img src="img/bl1.jpeg" class="card-img-top" alt="Cold-Pressed Juices">
-                    <div class="card-body p-4">
-                        <h5 class="card-title mb-3">
-                            <a href="#" class="text-dark text-decoration-none">Top 5 Benefits of Cold-Pressed Juices</a>
-                        </h5>
-                        <p class="card-text text-muted small">Discover why cold-pressed juices are taking over the health world — and how they can benefit your daily routine.</p>
-                    </div>
-                    <div class="card-footer bg-white border-top-0 px-4 pb-4 d-flex justify-content-between align-items-center">
-                        <small class="text-muted"><i class="fa fa-user text-primary me-2"></i>Admin</small>
-                        <small class="text-muted"><i class="fa fa-calendar text-primary me-2"></i>April 10, 2025</small>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Blog Post 2 -->
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="card h-100 border-0 shadow-sm">
-                    <img src="img/bl2.jpeg" class="card-img-top" alt="Juice Cleanse Guide">
-                    <div class="card-body p-4">
-                        <h5 class="card-title mb-3">
-                            <a href="#" class="text-dark text-decoration-none">A Beginner's Guide to Juice Cleansing</a>
-                        </h5>
-                        <p class="card-text text-muted small">Everything you need to know to start a juice cleanse with confidence — tips, timings, and juice combos included.</p>
-                    </div>
-                    <div class="card-footer bg-white border-top-0 px-4 pb-4 d-flex justify-content-between align-items-center">
-                        <small class="text-muted"><i class="fa fa-user text-primary me-2"></i>Admin</small>
-                        <small class="text-muted"><i class="fa fa-calendar text-primary me-2"></i>April 12, 2025</small>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Blog Post 3 -->
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="card h-100 border-0 shadow-sm">
-                    <img src="img/bl3.jpeg" class="card-img-top" alt="Immune Boosting Juices">
-                    <div class="card-body p-4">
-                        <h5 class="card-title mb-3">
-                            <a href="#" class="text-dark text-decoration-none">Immune-Boosting Juice Recipes for Every Season</a>
-                        </h5>
-                        <p class="card-text text-muted small">Boost your immunity naturally with these delicious and nutrient-packed juice recipes tailored to every season.</p>
-                    </div>
-                    <div class="card-footer bg-white border-top-0 px-4 pb-4 d-flex justify-content-between align-items-center">
-                        <small class="text-muted"><i class="fa fa-user text-primary me-2"></i>Admin</small>
-                        <small class="text-muted"><i class="fa fa-calendar text-primary me-2"></i>April 14, 2025</small>
-                    </div>
-                </div>
-            </div>
-
-            
-        </div>
-    </div>
-</div>
-<!-- Blog End -->
+    <!-- Carousel End -->
 
 
 
 
-<!-- Footer Start -->
-<div class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h1 class="fw-bold text-primary mb-4">Sultan<span class="text-secondary">Foods</span>&#174;</h1>
-                <p>Pure, organic juices crafted with love. Our mission is to deliver fresh, healthy beverages for a vibrant lifestyle.</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-square btn-outline-light rounded-circle me-0" href=""><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-light mb-4">Address</h4>
-                <p><i class="fa fa-map-marker-alt me-3"></i>Muzaffargarh, Punjab, Pakistan</p>
-                <p><i class="fa fa-phone-alt me-3"></i>+92 03028709980</p>
-                <p><i class="fa fa-envelope me-3"></i>info@sultanfoods.com</p>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-light mb-4">Quick Links</h4>
-                <a class="btn btn-link" href="">About Us</a>
-                <a class="btn btn-link" href="">Contact Us</a>
-                <a class="btn btn-link" href="">Our Juices</a>
-                <a class="btn btn-link" href="">Terms & Conditions</a>
-                <a class="btn btn-link" href="">Support</a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-light mb-4">Newsletter</h4>
-                <p>Stay updated with our latest juice offers and promotions. Sign up now!</p>
-                <div class="position-relative mx-auto" style="max-width: 400px;">
-                    <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid copyright">
+
+
+
+
+    <!-- Feature Start -->
+    <div class="container-fluid bg-light bg-icon my-5 py-6">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a href="#">Sultan Foods&#174;</a>, All Right Reserved.
+            <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
+                style="max-width: 500px;">
+                <h1 class="display-5 mb-3">Our Juice Features</h1>
+                <p>Discover the benefits of our freshly prepared juices, made with care to deliver pure flavor and
+                    natural goodness.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="bg-white text-center h-100 p-4 p-xl-5">
+                        <img class="img-fluid mb-4" src="img/icon-1.png" alt="">
+                        <h4 class="mb-3">Cold-Pressed Process</h4>
+                        <p class="mb-4">Our juices are cold-pressed to retain maximum nutrients and freshness,
+                            ensuring every sip is packed with health benefits.</p>
+                        <!-- <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read More</a> -->
+                    </div>
                 </div>
-                <div class="col-md-6 text-center text-md-end">
-                    Designed By <a href="https://htmlcodex.com">Fahad Ahmad Sultan</a>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="bg-white text-center h-100 p-4 p-xl-5">
+                        <img class="img-fluid mb-4" src="img/icon-2.png" alt="">
+                        <h4 class="mb-3">Healthy Juices</h4>
+                        <p class="mb-4">Our juice is 100% natural and healthy, made entirely from organic ingredients.
+                            Rich in vitamins C and E, it helps keep your body healthy and strong.</p>
+
+                        <!-- <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read More</a> -->
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="bg-white text-center h-100 p-4 p-xl-5">
+                        <img class="img-fluid mb-4" src="img/icon-3.png" alt="">
+                        <h4 class="mb-3">Safe & Hygienic</h4>
+                        <p class="mb-4">Every bottle is prepared under strict hygiene standards, ensuring it's
+                            biologically safe and perfectly refreshing.</p>
+                        <!-- <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read More</a> -->
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Footer End -->
+    <!-- Feature End -->
+
+
+
+
+
+    <!-- Visit Juice Bar Start -->
+    <div class="container-fluid bg-success bg-icon mt-5 py-6 d-flex justify-content-center align-items-center"
+        style="min-height: 400px;">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-md-8 wow fadeIn" data-wow-delay="0.1s">
+                    <h1 class="display-5 text-white mb-3">Come Sip With Us!</h1>
+                    <p class="text-white mb-0">
+                        Experience the freshness of nature right at our juice bar. From cold-pressed juices to
+                        energizing fruit blends,
+                        our space is all about health, taste, and community. Drop by and enjoy a glass of wellness!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Visit Juice Bar End -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h1 class="fw-bold text-primary mb-4">Sultan<span class="text-secondary">Foods</span>&#174;</h1>
+                    <p>Pure, healthy juices crafted with love. Our mission is to deliver fresh, healthy beverages
+                        for a vibrant lifestyle.</p>
+
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-light rounded-circle me-5"
+                            href="https://www.instagram.com/sultan_the_food_experts?igsh=MWdoNTJyaWU3OXhiOA=="><i
+                                class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-5"
+                            href="https://www.facebook.com/share/18wJ2gR9rJ/"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-5"
+                            href="https://wa.me/?text=Check%20out%20this%20link%20to%20Sultan%20Foods!" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+
+
+
+
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>Plot # 283, Street No. 13, Main Alipur Road, Muzaffargarh, Punjab, Pakistan 34200</p>
+                    <p>
+                        <i class="fa fa-phone-alt me-3"></i>
+                        <a href="tel:+923028709980" class="text-light">+92 302 8709980</a>
+                    </p>
+                    <p>
+                        <i class="fa fa-envelope me-3"></i>
+                        <a href="mailto:sultanfoodsbigsip@gmail.com" class="text-light">sultanfoodsbigsip@gmail.com</a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="product.html">Products</a>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h4 class="text-light mb-3">Have a Question?</h4>
+                    <p class="text-muted">
+                        Got a query or want to know more about our juices? Send us a message — we’d love to hear from
+                        you!
+                    </p>
+                    <div class="position-relative mx-auto" style="max-width: 100%;">
+                        <textarea id="newsletterEmail"
+                            class="form-control bg-transparent text-light border-light w-100 py-3 ps-4 pe-5 mb-2"
+                            placeholder="Your email">
+                            </textarea>
+                        <a id="emailLink" href="#" class="btn btn-primary position-absolute top-0 end-0 mt-2 me-2">
+                            Email me
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="#">Sultan Foods&#174;</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        Designed By <a href="https://htmlcodex.com">Fahad Ahmad Sultan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
 
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
+            class="bi bi-arrow-up"></i></a>
 
 
     <!-- JavaScript Libraries -->
@@ -509,36 +588,46 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-
+    <script>
+        document.getElementById('emailLink').addEventListener('click', function (e) {
+            const email = document.getElementById('newsletterEmail').value;
+            if (email) {
+                this.href = `mailto:sultanfoodsbigsip@gmail.com?subject=Newsletter Signup&body=Please add ${email} to the newsletter.`;
+            } else {
+                alert("Please enter your email address first.");
+                e.preventDefault();
+            }
+        });
+    </script>
     <script>
         const products = {
-          citrus: [
-            { name: "Orange Boost", price: "$5.00", image: "img/bl1.jpeg" },
-            { name: "Lemon Zing", price: "$4.50", image: "img/bl2.jpeg" }
-          ],
-          berries: [
-            { name: "Strawberry Fresh", price: "$6.00", image: "img/bl3.jpeg" },
-            { name: "Blueberry Bliss", price: "$6.50", image: "img/bl2.jpeg" },
-            { name: "Strawberry Fresh", price: "$6.00", image: "img/bl1.jpeg" },
-            { name: "Blueberry Bliss", price: "$6.50", image: "img/bl3.jpeg" },
+            citrus: [
+                { name: "Orange Boost", price: "$5.00", image: "img/bl1.jpeg" },
+                { name: "Lemon Zing", price: "$4.50", image: "img/bl2.jpeg" }
+            ],
+            berries: [
+                { name: "Strawberry Fresh", price: "$6.00", image: "img/bl3.jpeg" },
+                { name: "Blueberry Bliss", price: "$6.50", image: "img/bl2.jpeg" },
+                { name: "Strawberry Fresh", price: "$6.00", image: "img/bl1.jpeg" },
+                { name: "Blueberry Bliss", price: "$6.50", image: "img/bl3.jpeg" },
 
-          ],
-          tropical: [
-            { name: "Mango Punch", price: "$5.50", image: "img/bl1.jpeg" },
-            { name: "Pineapple Pop", price: "$5.75", image: "img/bl3.jpeg" }
-          ],
-          green: [
-            { name: "Green Detox", price: "$6.00", image: "img/bl2.jpeg" },
-            { name: "Strawberry Fresh", price: "$6.00", image: "img/bl1.jpeg" },
-            { name: "Blueberry Bliss", price: "$6.50", image: "img/bl3.jpeg" },
-          ]
+            ],
+            tropical: [
+                { name: "Mango Punch", price: "$5.50", image: "img/bl1.jpeg" },
+                { name: "Pineapple Pop", price: "$5.75", image: "img/bl3.jpeg" }
+            ],
+            green: [
+                { name: "Green Detox", price: "$6.00", image: "img/bl2.jpeg" },
+                { name: "Strawberry Fresh", price: "$6.00", image: "img/bl1.jpeg" },
+                { name: "Blueberry Bliss", price: "$6.50", image: "img/bl3.jpeg" },
+            ]
         };
-      
+
         function renderProducts(category) {
-          const container = document.getElementById('productContainer');
-          container.innerHTML = '';
-          products[category].forEach(product => {
-            container.innerHTML += `
+            const container = document.getElementById('productContainer');
+            container.innerHTML = '';
+            products[category].forEach(product => {
+                container.innerHTML += `
               <div class="col-md-6 col-lg-4 col-xl-3">
                 <div class="card border-0 shadow-lg h-100">
                   <img src="${product.image}" class="card-img-top rounded-top" alt="${product.name}">
@@ -550,21 +639,21 @@
                 </div>
               </div>
             `;
-          });
+            });
         }
-      
+
         document.querySelectorAll('#juiceTabs .nav-link').forEach(tab => {
-          tab.addEventListener('click', function () {
-            document.querySelectorAll('#juiceTabs .nav-link').forEach(link => link.classList.remove('active'));
-            this.classList.add('active');
-            renderProducts(this.getAttribute('data-category'));
-          });
+            tab.addEventListener('click', function () {
+                document.querySelectorAll('#juiceTabs .nav-link').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+                renderProducts(this.getAttribute('data-category'));
+            });
         });
-      
+
         renderProducts('citrus');
-      </script>
-      
-      
+    </script>
+
+
 
 
     <!-- Template Javascript -->
