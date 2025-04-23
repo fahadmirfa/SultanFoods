@@ -40,171 +40,181 @@
     </div>
     <!-- Spinner End -->
 
-    <!-- Top Bar + Navbar Styles -->
-    <style>
-        /* Top Bar Styles */
-        .top-bar-custom {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            padding: 10px 30px;
-            /* Top/Bottom: 10px | Left/Right: 30px */
-            font-size: 14px;
-            width: 100%;
+
+    <!-- Centered Logo -->
+<div style="text-align: center; padding: 0px 0;">
+    <a href="index.html">
+        <img src="img/logo.svg" alt="Sultan Foods" style="height: 140px;">
+    </a>
+</div>
+
+<!-- Navbar Start -->
+<style>
+    .navbar-custom {
+        background: white;
+        /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); */
+        padding: 10px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .social-icons a {
+        color: #28a745;
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+        color: #ff6600;
+    }
+
+    .drawer-toggle {
+        font-size: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #333;
+        display: none; /* default hidden */
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-links a {
+        color: #333;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: #ff6600;
+    }
+
+    /* Drawer styles */
+    .mobile-drawer {
+        position: fixed;
+        top: 80px;
+        right: -240px;
+        width: 220px;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        box-shadow: -2px 8px 18px rgba(0, 0, 0, 0.15);
+        border-radius: 12px 0 0 12px;
+        padding: 20px 16px;
+        transition: right 0.3s ease;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        height: auto;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .mobile-drawer.open {
+        right: 10px;
+    }
+
+    .mobile-drawer a {
+        color: #333;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .mobile-drawer a:hover {
+        color: #ff6600;
+    }
+    .drawer-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.2); /* subtle background */
+    z-index: 9998;
+}
+
+.drawer-overlay.active {
+    display: block;
+}
+
+    /* Responsive behavior */
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
         }
 
-
-        .top-bar-custom i {
-            color: #28a745;
+        .drawer-toggle {
+            display: block;
         }
 
-        .top-bar-custom a {
-            transition: color 0.3s;
-        }
+    }
+</style>
 
-        .top-bar-custom a:hover {
-            color: #ff6600;
-        }
-
-        /* Navbar Styles */
-        .navbar-custom {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            border-radius: 20px;
-            margin: 10px 20px;
-            padding: 5px 30px;
-            position: sticky;
-            top: 60px;
-            /* space for the top bar */
-            z-index: 998;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .navbar-custom .nav-link {
-            color: #333;
-            font-weight: 600;
-            margin: 0 12px;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-custom .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0%;
-            height: 2px;
-            bottom: 0;
-            left: 50%;
-            background-color: #ff6600;
-            transition: 0.4s;
-            transform: translateX(-50%);
-        }
-
-        .navbar-custom .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .navbar-custom .nav-link:hover {
-            color: #ff6600;
-        }
-
-        .navbar-logo {
-            height: 70px;
-        }
-
-        @media (max-width: 991.98px) {
-            .navbar-custom {
-                border-radius: 10px;
-                top: 0;
-                padding: 20px;
-            }
-
-            .navbar-collapse {
-                background: rgba(255, 255, 255, 0.95);
-                border-radius: 15px;
-                padding: 10px 20px;
-            }
-
-            .navbar-nav {
-                margin-top: 10px;
-            }
-
-            .nav-item {
-                margin: 10px 0;
-            }
-
-            .top-bar-custom {
-                display: none !important;
-            }
-        }
-    </style>
-
-    <!-- Top Bar Start -->
-    <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
-        <div class="top-bar row gx-0 align-items-center d-none d-lg-flex bg-white shadow-sm py-2"
-            style="padding-left: 30px; padding-right: 30px;">
-            <div class="col-lg-6 text-start">
-                <small class="me-4 fw-semibold text-muted">
-                    <i class="fa fa-map-marker-alt me-2 text-success"></i>Plot # 283, Street No. 13, Main Alipur Road, Muzaffargarh, Punjab, Pakistan 34200
-                </small>
-                <small class="fw-semibold text-muted">
-                    <i class="fa fa-envelope me-2 text-success"></i>sultanfoodsbigsip@gmail.com
-                </small>
-            </div>
-            <div class="col-lg-6 text-end">
-                <small class="fw-semibold text-muted">Follow us:</small>
-                <a class="text-success ms-3 fs-5" target="_blank"
-                    href="https://www.instagram.com/sultan_the_food_experts?igsh=MWdoNTJyaWU3OXhiOA=="><i
-                        class="fab fa-instagram"></i></a>
-                <a class="text-success ms-3 fs-5" target="_blank" href="https://www.facebook.com/share/18wJ2gR9rJ/"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a class="text-success ms-3 fs-5"
-                    href="https://wa.me/?text=Check%20out%20this%20link%20to%20Sultan%20Foods!" target="_blank">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
-        </div>
+<!-- Navbar -->
+<nav class="navbar-custom">
+    <!-- Left: Social Icons -->
+    <div class="social-icons">
+        <a href="https://www.instagram.com/sultan_the_food_experts" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/18wJ2gR9rJ/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/?text=Check%20out%20this%20link%20to%20Sultan%20Foods!" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
-    <!-- Top Bar End -->
+
+    <!-- Right: Drawer Toggle (mobile) -->
+    <button class="drawer-toggle" onclick="toggleDrawer()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Right: Horizontal Nav Links (desktop) -->
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="product.html">Products</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<!-- Drawer Overlay -->
+<div id="drawerOverlay" class="drawer-overlay" onclick="closeDrawerOnClickOutside(event)">
+    <div id="mobileDrawer" class="mobile-drawer" onclick="event.stopPropagation()">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="product.html">Products</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</div>
 
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg navbar-light navbar-custom wow fadeIn" data-wow-delay="0.1s">
-        <a href="index.html" class="navbar-brand">
-            <img src="img/logo.svg" alt="Sultan Foods" class="navbar-logo">
-        </a>
+<script>
+    function toggleDrawer() {
+        const drawer = document.getElementById('mobileDrawer');
+        const overlay = document.getElementById('drawerOverlay');
 
-        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        drawer.classList.toggle('open');
+        overlay.classList.toggle('active');
+    }
 
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="product.html" class="nav-item nav-link">Products</a>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
-            </div>
-        </div>
-    </nav>
-    <!-- Navbar End -->
+    function closeDrawerOnClickOutside(event) {
+        const drawer = document.getElementById('mobileDrawer');
+        const overlay = document.getElementById('drawerOverlay');
 
+        drawer.classList.remove('open');
+        overlay.classList.remove('active');
+    }
+</script>
 
-
-
-
-    <!-- Additional Style to Avoid Overlap -->
-    <style>
-        /* Ensure there’s space for the fixed navbar */
-        body {
-            padding-top: 10px;
-            /* Adjust based on your navbar height */
-        }
-    </style>
-
-    <!-- Top Bar End -->
 
 
 
