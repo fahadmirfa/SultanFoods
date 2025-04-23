@@ -50,9 +50,9 @@
 
 <!-- Navbar Start -->
 <style>
+    /* ---------- Navbar Custom Styles ---------- */
     .navbar-custom {
         background: white;
-        /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); */
         padding: 10px 30px;
         display: flex;
         align-items: center;
@@ -61,49 +61,49 @@
         top: 0;
         z-index: 1000;
     }
-
+    
     .social-icons {
         display: flex;
         gap: 15px;
         align-items: center;
     }
-
+    
     .social-icons a {
         color: #28a745;
         font-size: 1.2rem;
         transition: color 0.3s ease;
     }
-
+    
     .social-icons a:hover {
         color: #ff6600;
     }
-
+    
     .drawer-toggle {
         font-size: 24px;
         background: none;
         border: none;
         cursor: pointer;
         color: #333;
-        display: none; /* default hidden */
+        display: none;
     }
-
+    
     .nav-links {
         display: flex;
         gap: 20px;
     }
-
+    
     .nav-links a {
         color: #333;
         font-weight: 600;
         text-decoration: none;
         transition: color 0.3s ease;
     }
-
+    
     .nav-links a:hover {
         color: #ff6600;
     }
-
-    /* Drawer styles */
+    
+    /* ---------- Drawer Menu ---------- */
     .mobile-drawer {
         position: fixed;
         top: 80px;
@@ -119,49 +119,105 @@
         display: flex;
         flex-direction: column;
         gap: 14px;
-        height: auto;
         max-height: 90vh;
         overflow-y: auto;
     }
-
+    
     .mobile-drawer.open {
         right: 10px;
     }
-
+    
     .mobile-drawer a {
         color: #333;
         font-weight: 600;
         text-decoration: none;
         font-size: 16px;
     }
-
+    
     .mobile-drawer a:hover {
         color: #ff6600;
     }
+    
     .drawer-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.2); /* subtle background */
-    z-index: 9998;
-}
-
-.drawer-overlay.active {
-    display: block;
-}
-
-    /* Responsive behavior */
+        display: none;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: 9998;
+    }
+    
+    .drawer-overlay.active {
+        display: block;
+    }
+    
+    /* ---------- Contact Overlay (inside slider) ---------- */
+    .slider-item {
+        position: relative;
+    }
+    
+    .contact-overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.75);
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        font-weight: 400;
+        font-size: 14px;
+        animation: slideUpIn 1s ease;
+        transition: all 0.3s ease;
+    }
+    
+    .contact-overlay:hover {
+        color: #ff6600;
+        letter-spacing: 0.5px;
+    }
+    
+    /* ---------- Animations ---------- */
+    @keyframes slideUpIn {
+        from {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    /* ---------- Responsive Design ---------- */
     @media (max-width: 768px) {
         .nav-links {
             display: none;
         }
-
+    
         .drawer-toggle {
             display: block;
         }
-
     }
-</style>
+    </style>
+    
 
 <!-- Navbar -->
 <nav class="navbar-custom">
@@ -215,180 +271,25 @@
     }
 </script>
 
-
-
-
-<!-- Carousel Start -->
-<style>
-    .carousel-container {
-        max-width: 1500px;
-        margin: 0 auto;
-        padding-top: 50px;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .carousel-img-short {
-        width: 100%;
-        height: 800px;
-        object-fit: cover;
-    }
-
-    .carousel-caption h2 {
-        font-size: 2rem;
-        color: white;
-        text-align: left;
-        padding-left: 2rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-    }
-
-    .btn-outline-light-custom {
-        color: white;
-        border: 2px solid white;
-        height: 60px;
-        width: 180px;
-        font-size: 18px;
-        font-weight: bold;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .carousel-item:nth-child(1) .btn-outline-light-custom {
-        background-color: #008000;
-    }
-
-    .carousel-item:nth-child(1) .btn-outline-light-custom:hover {
-        background-color: #009e00;
-        color: white;
-    }
-
-    .carousel-item:nth-child(2) .btn-outline-light-custom {
-        background-color: #ff4500;
-    }
-
-    .carousel-item:nth-child(2) .btn-outline-light-custom:hover {
-        background-color: #ff8c00;
-        color: white;
-    }
-
-    .carousel-caption .full-width-caption {
-        position: absolute;
-        bottom: 20%;
-        left: 2rem;
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding-left: 1rem;
-    }
-
-    .carousel-caption .full-width-caption a {
-        text-decoration: none;
-    }
-
-    .carousel-contact-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.85);
-        color: white;
-        text-align: center;
-        padding: 8px 0;
-        font-size: 14px;
-        z-index: 10;
-    }
-
-    .carousel-contact-overlay i {
-        margin: 0 5px;
-        color: white;
-    }
-
-    .carousel-contact-overlay a {
-        color: white;
-        text-decoration: none;
-    }
-
-    @media (max-width: 768px) {
-        .carousel-img-short {
-            height: 400px;
-        }
-
-        .carousel-caption h2 {
-            font-size: 1.5rem;
-        }
-
-        .carousel-caption .full-width-caption {
-            padding-top: 20rem;
-            padding-left: 1rem;
-        }
-
-        .carousel-contact-overlay {
-            font-size: 12px;
-            padding: 6px 0;
-        }
-    }
-</style>
-
-<div class="carousel-container">
-    <div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
-        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active">
-                    <picture>
-                        <source media="(max-width: 768px)" srcset="img/Mango1.png">
-                        <img class="w-100 carousel-img-short" src="img/1.svg" alt="Fresh Juice Banner">
-                    </picture>
-                    <div class="carousel-caption">
-                        <div class="full-width-caption">
-                            <!-- Example CTA Button -->
-                            <!-- <a href="#" class="btn btn-outline-light-custom rounded-pill py-sm-3 px-sm-5">Explore Now</a> -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="carousel-item">
-                    <picture>
-                        <source media="(max-width: 768px)" srcset="img/SMOOTHIE1.png">
-                        <img class="w-100 carousel-img-short" src="img/2.svg" alt="Juice Lifestyle">
-                    </picture>
-                    <div class="carousel-caption">
-                        <div class="full-width-caption">
-                            <!-- <a href="#" class="btn btn-outline-light-custom rounded-pill py-sm-3 px-sm-5">Join Us</a> -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Info Overlay -->
-                <div class="carousel-contact-overlay">
-                    <i class="fa fa-phone"></i>
-                    <a href="tel:+923028709980">+92 302 8709980</a>
-                    <span>|</span>
-                    <i class="fa fa-envelope"></i>
-                    <a href="mailto:sultanfoodsbigsip@gmail.com">sultanfoodsbigsip@gmail.com</a>
-                </div>
+<!-- Image Slider Start -->
+<div class="container my-4">
+    <div class="owl-carousel owl-theme" id="imageSlider">
+        <div class="item slider-item">
+            <img src="img/1.svg" alt="Slide 1" class="img-fluid rounded">
+            <div class="contact-overlay">
+                📞 +92-300-1234567 | ✉️ info@sultanfoods.com
             </div>
-
-            <!-- Carousel Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
+        <div class="item slider-item">
+            <img src="img/2.svg" alt="Slide 2" class="img-fluid rounded">
+            <div class="contact-overlay">
+                📞 +92-300-1234567 | ✉️ info@sultanfoods.com
+            </div>
+        </div>
+  
     </div>
 </div>
-<!-- Carousel End -->
-
+<!-- Image Slider End -->
 
 
 
@@ -563,7 +464,6 @@
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
     <script>
         document.getElementById('emailLink').addEventListener('click', function (e) {
@@ -630,6 +530,25 @@
         renderProducts('citrus');
     </script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#imageSlider").owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: false,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: { items: 1 },
+                768: { items: 1 },
+                1000: { items: 1 }
+            }
+        });
+    });
+</script>
 
 
 
