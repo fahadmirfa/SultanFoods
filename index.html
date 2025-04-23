@@ -218,210 +218,160 @@
 
 
 
-    <!-- Carousel Start -->
-    <style>
-        /* Outer Container for Carousel */
-        .carousel-container {
-            max-width: 1500px;
-            /* Increased static width for the container */
-            margin: 0 auto;
-            /* Center the container horizontally */
-            padding-top: 50px;
-            /* Add top padding to the container */
-            padding-left: 15px;
-            padding-right: 15px;
-        }
+ <!-- Carousel Start -->
+<style>
+    /* Carousel Image Full Width and Height */
+    .carousel-img-short {
+        width: 100%;
+        height: 1080px;
+        object-fit: cover;
+    }
 
-        /* Carousel Image with Proper Fit */
-        .carousel-img-short {
-            width: 100%;
-            /* Ensure the image takes full width of the container */
-            height: 800px;
-            /* Set the height of the container */
-            object-fit: cover;
-            /* Ensure the image covers the container area without distortion */
-        }
+    /* General Caption Styling */
+    .carousel-caption h2 {
+        font-size: 2rem;
+        color: white;
+        text-align: left;
+        padding-left: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
 
-        /* General Caption Styling */
+    /* Button Base */
+    .btn-outline-light-custom {
+        color: white;
+        border: 2px solid white;
+        height: 60px;
+        width: 180px;
+        font-size: 18px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Button Colors Per Slide */
+    .carousel-item:nth-child(1) .btn-outline-light-custom {
+        background-color: #008000;
+    }
+
+    .carousel-item:nth-child(1) .btn-outline-light-custom:hover {
+        background-color: #009e00;
+        color: white;
+    }
+
+    .carousel-item:nth-child(2) .btn-outline-light-custom {
+        background-color: #ff4500;
+    }
+
+    .carousel-item:nth-child(2) .btn-outline-light-custom:hover {
+        background-color: #ff8c00;
+        color: white;
+    }
+
+    /* Caption Container */
+    .carousel-caption .full-width-caption {
+        position: absolute;
+        bottom: 20%;
+        left: 2rem;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-left: 1rem;
+    }
+
+    /* Bottom Contact Info */
+    .carousel-contact-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        color: white;
+        text-align: center;
+        padding: 8px 0;
+        font-size: 14px;
+        z-index: 10;
+    }
+
+    .carousel-contact-overlay i,
+    .carousel-contact-overlay a {
+        color: white;
+        margin: 0 5px;
+        text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
         .carousel-caption h2 {
-            font-size: 2rem;
-            color: white;
-            text-align: left;
-            padding-left: 2rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
 
-        /* Base Button Style */
-        .btn-outline-light-custom {
-            color: white;
-            border: 2px solid white;
-            height: 60px;
-            width: 180px;
-            font-size: 18px;
-            font-weight: bold;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        /* Button Style for First Slide */
-        .carousel-item:nth-child(1) .btn-outline-light-custom {
-            background-color: #008000;
-        }
-
-        .carousel-item:nth-child(1) .btn-outline-light-custom:hover {
-            background-color: #009e00;
-            color: white;
-        }
-
-        /* Button Style for Second Slide */
-        .carousel-item:nth-child(2) .btn-outline-light-custom {
-            background-color: #ff4500;
-        }
-
-        .carousel-item:nth-child(2) .btn-outline-light-custom:hover {
-            background-color: #ff8c00;
-            color: white;
-        }
-
-        /* Align Caption Content to Left */
         .carousel-caption .full-width-caption {
-            position: absolute;
-            bottom: 20%;
-            left: 2rem;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            /* Left-align button */
+            padding-top: 20rem;
             padding-left: 1rem;
         }
 
-        .carousel-caption .full-width-caption a {
-            text-decoration: none;
-        }
-
-        /* Bottom Contact Styling */
-        .carousel-contact {
-            position: absolute;
-            bottom: 10px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 10px 0;
-            font-size: 14px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* Contact Icon Styling */
-        .carousel-contact i {
-            color: white;
-            font-size: 20px;
-        }
-
         .carousel-contact-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            color: white;
-            text-align: center;
-            padding: 8px 0;
-            font-size: 14px;
-            z-index: 10;
+            font-size: 12px;
+            padding: 6px 0;
         }
+        .carousel-img-short {
+        height: 400px; /* Adjust as per your preference */
+        object-fit: contain;
+    }
+    }
+</style>
 
-        .carousel-contact-overlay i {
-            margin: 0 5px;
-            color: white;
-        }
-
-        .carousel-contact-overlay a {
-            color: white;
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            .carousel-caption h2 {
-                font-size: 1.5rem;
-            }
-
-            .carousel-caption .full-width-caption {
-                padding-top: 20rem;
-                padding-left: 1rem;
-            }
-
-            .carousel-contact {
-                font-size: 12px;
-            }
-
-            .carousel-contact-overlay {
-                font-size: 12px;
-                padding: 6px 0;
-            }
-
-            .carousel-item .carousel-caption {
-                padding-left: 10px;
-            }
-        }
-    </style>
-
-    <!-- Carousel Container -->
-    <div class="carousel-container">
-        <div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
-            <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="w-100 carousel-img-short" src="img/1.svg" alt="Fresh Juice Banner">
-                        <div class="carousel-caption">
-                            <div class="full-width-caption">
-                                <!-- <a href="http://google.com" target="_blank" class="btn btn-outline-light-custom rounded-pill py-sm-3 px-sm-5">Explore Now</a> -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <img class="w-100 carousel-img-short" src="img/2.svg" alt="Juice Lifestyle">
-                        <div class="carousel-caption">
-                            <div class="full-width-caption">
-                                <!-- <a href="http://google.com" target="_blank" class="btn btn-outline-light-custom rounded-pill py-sm-3 px-sm-5">Join Us</a> -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-contact-overlay">
-                        <i class="fa fa-phone"></i>
-                        <a href="tel:+923028709980" style="color: white; text-decoration: none;">+923028709980</a>
-                        <span>|</span>
-                        <i class="fa fa-envelope"></i>
-                        <a href="mailto:sultanfoodsbigsip@gmail.com"
-                            style="color: white; text-decoration: none;">sultanfoodsbigsip@gmail.com</a>
+<!-- Carousel Full Width -->
+<div class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
+    <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <img class="carousel-img-short" src="img/1.svg" alt="Fresh Juice Banner">
+                <div class="carousel-caption">
+                    <div class="full-width-caption">
+                        <!-- <a href="#" class="btn btn-outline-light-custom rounded-pill">Explore Now</a> -->
                     </div>
                 </div>
+            </div>
 
-                <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <img class="carousel-img-short" src="img/2.svg" alt="Juice Lifestyle">
+                <div class="carousel-caption">
+                    <div class="full-width-caption">
+                        <!-- <a href="#" class="btn btn-outline-light-custom rounded-pill">Join Us</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Overlay -->
+            <div class="carousel-contact-overlay">
+                <i class="fa fa-phone"></i>
+                <a href="tel:+923028709980">+92 302 8709980</a>
+                <span>|</span>
+                <i class="fa fa-envelope"></i>
+                <a href="mailto:sultanfoodsbigsip@gmail.com">sultanfoodsbigsip@gmail.com</a>
             </div>
         </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-    <!-- Carousel End -->
+</div>
+<!-- Carousel End -->
+
 
 
 
