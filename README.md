@@ -74,8 +74,8 @@ Our office is located in Muzaffargarh, Pakistan. The embedded Google Map provide
 - **Email**: sultanfoodsbigsip@gmail.com
 - **Address**: Plot #283, Street No. 13, Main Alipur Road, Muzaffargarh, Punjab, Pakistan 34200
 - **Facebook**: [facebook.com/sultanfoods](https://www.facebook.com/share/18wJ2gR9rJ/)
-- **WhatsApp**: [whatsapp.com/sultanfoods]([https://www.twitter.com/sultanfoods](https://wa.me/?text=Check%20out%20this%20link%20to%20Sultan%20Foods!))
-- **LinkedIn**: [linkedin.com/company/sultanfoods]([https://www.linkedin.com/company/sultanfoods](https://www.instagram.com/sultan_the_food_experts?igsh=MWdoNTJyaWU3OXhiOA==))
+- **WhatsApp**: [whatsapp.com/sultanfoods](https://wa.me/?text=Check%20out%20this%20link%20to%20Sultan%20Foods!)
+- **LinkedIn**: [linkedin.com/company/sultanfoods](https://www.instagram.com/sultan_the_food_experts?igsh=MWdoNTJyaWU3OXhiOA==)
 
 ## 📄 License
 
