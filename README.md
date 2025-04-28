@@ -70,12 +70,12 @@ Our office is located in Muzaffargarh, Pakistan. The embedded Google Map provide
 
 ## 📞 Contact Information
 
-- **Phone**: +92 123 4567890
-- **Email**: info@sultanfoods.com
-- **Address**: Main Bazaar, Muzaffargarh, Pakistan
-- **Facebook**: [facebook.com/sultanfoods](https://www.facebook.com/sultanfoods)
-- **Twitter**: [twitter.com/sultanfoods](https://www.twitter.com/sultanfoods)
-- **LinkedIn**: [linkedin.com/company/sultanfoods](https://www.linkedin.com/company/sultanfoods)
+- **Phone**: +923028709980
+- **Email**: sultanfoodsbigsip@gmail.com
+- **Address**: Plot #283, Street No. 13, Main Alipur Road, Muzaffargarh, Punjab, Pakistan 34200
+- **Facebook**: [facebook.com/sultanfoods](https://www.facebook.com/share/18wJ2gR9rJ/)
+- **WhatsApp**: [whatsapp.com/sultanfoods]([https://www.twitter.com/sultanfoods](https://wa.me/?text=Check%20out%20this%20link%20to%20Sultan%20Foods!))
+- **LinkedIn**: [linkedin.com/company/sultanfoods]([https://www.linkedin.com/company/sultanfoods](https://www.instagram.com/sultan_the_food_experts?igsh=MWdoNTJyaWU3OXhiOA==))
 
 ## 📄 License
 
